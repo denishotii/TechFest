@@ -1,3 +1,5 @@
+![Logo](https://cdn.discordapp.com/attachments/1032681097764536403/1033699563535597649/logo165.png)  
+
 ## About Map Vibe
 
 Attention: Do you want to explore the world? Map Vibes is the perfect app for you!
