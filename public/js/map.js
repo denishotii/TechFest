@@ -18,6 +18,69 @@ function successLocation(position) {
         zoom: 12
     });
 
+
+    const geocoder = new MapboxGeocoder({
+        // Initialize the geocoder
+        accessToken: mapboxgl.accessToken, // Set the access token
+        mapboxgl: mapboxgl, // Set the mapbox-gl instance
+        marker: false, // Do not use the default marker style
+        placeholder: 'Search for places in Berkeley', // Placeholder text for the search bar
+        bbox: [19.006777,40.837158,20.500917,41.753353], // Boundary for Berkeley
+        proximity: {
+            longitude: -122.25948,
+            latitude: 37.87221
+        } // Coordinates of UC Berkeley
+    });
+
+    map.addControl(geocoder);
+
+    geocoder.on('result', (event) => {
+        const coords = event.result.geometry.coordinates;
+        const end = {
+            type: 'FeatureCollection',
+            features: [
+                {
+                    type: 'Feature',
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: coords
+                    }
+                }
+            ]
+        };
+        if (map.getLayer('end')) {
+
+            map.getSource('end').setData(end);
+        } else {
+            map.addLayer({
+                id: 'end',
+                type: 'circle',
+                source: {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: [
+                            {
+                                type: 'Feature',
+                                properties: {},
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: coords
+                                }
+                            }
+                        ]
+                    }
+                },
+                paint: {
+                    'circle-radius': 10,
+                    'circle-color': '#589172'
+                }
+            });
+        }
+        getRoute(coords)
+    });
+
     const insert = (arr, index, newItem) => [
         // part of the array before the specified index
         ...arr.slice(0, index),
@@ -140,7 +203,8 @@ function successLocation(position) {
                 },
                 paint: {
                     'circle-radius': 10,
-                    'circle-color': '#3887be'
+                    'circle-color': '#589172',
+                    'circle-opacity': 1
                 }
             });
         }
@@ -170,7 +234,7 @@ function successLocation(position) {
                     'line-cap': 'round'
                 },
                 paint: {
-                    'line-color': '#3887be',
+                    'line-color': '#589172',
                     'line-width': 5,
                     'line-opacity': 0.75
                 }
@@ -205,7 +269,7 @@ function successLocation(position) {
             },
             paint: {
                 'circle-radius': 10,
-                'circle-color': '#3887be'
+                'circle-color': '#589172'
             }
         });
 
@@ -249,7 +313,7 @@ function successLocation(position) {
                     },
                     paint: {
                         'circle-radius': 10,
-                        'circle-color': '#f30'
+                        'circle-color': '#589172'
                     }
                 });
             }
