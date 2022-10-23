@@ -19,6 +19,16 @@ use App\Http\Controllers\RoutesController;
 Route::get('/', function () {
     return view('homepage');
 });
+Route::get('/design', function () {
+    return view('design');
+});
+Route::get('/signup1', function () {
+    return view('auth.signup');
+});
+
+Route::get('/login1', function () {
+    return view('auth.login1');
+});
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
