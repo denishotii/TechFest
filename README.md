@@ -14,9 +14,9 @@ You need **[Composer](https://getcomposer.org/download/)** & **[Node.js](https:/
 
 ## Requirements 
 - We recommend using Laragon 
-- SIA won’t run with PHP versions that are lower than 8.0  
-- SIA uses MySql as database, version of MySql should be higher than 5.7 
-- SIA uses TAILWIND CSS framework, for UI 
+- Map Vibes won’t run with PHP versions that are lower than 8.0  
+- Map Vibes uses MySql as database, version of MySql should be higher than 5.7 
+- Map Vibes uses TAILWIND CSS framework, for UI 
 
 
 
