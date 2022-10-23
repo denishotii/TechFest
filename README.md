@@ -12,12 +12,17 @@ Desire: Explore breathtaking routes and places with Map Vibes to make your vacat
 
 You need **[Composer](https://getcomposer.org/download/)** & **[Node.js](https://nodejs.org/en/download/)** to download the required packages for Map Vibes to function, on the parent directory you have to run composer install & npm install.
 
+## APIs used
+
+[Mapbox API](https://www.mapbox.com/)
+
+[Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)
+
 ## Requirements 
 - We recommend using Laragon 
 - Map Vibes won’t run with PHP versions that are lower than 8.0  
 - Map Vibes uses MySql as database, version of MySql should be higher than 5.7 
-- Map Vibes uses TAILWIND CSS framework, for UI 
-
+- Map Vibes uses TAILWIND CSS framework, for UI
 
 
 ## Commands
@@ -55,7 +60,7 @@ php artisan migrate
 
 ## Collaborators
 
-- [Ardit Xhaferi](https://www.linkedin.com/in/ardit-xhaferi/)
+- [Ardit Xhaferi](https://github.com/arditxhaferi)
 - [Ben Gorani](https://www.linkedin.com/in/ben-gorani-405b06212/)
 - [Denis Hoti](https://www.linkedin.com/in/denishoti/)
 - [Leon Hajdari](mailto:leonhajdari832@gmail.com)
