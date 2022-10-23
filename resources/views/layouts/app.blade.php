@@ -20,7 +20,7 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        {{-- @include('layouts.inc.header') --}}
+        @include('layouts.inc.header')
        
 
         @yield('content')
