@@ -24,8 +24,6 @@
         #instructions {
             position: absolute;
             margin: 20px;
-            width: 25%;
-            height: 100px;
             top: 0;
             bottom: 20%;
             padding: 20px;
@@ -34,7 +32,12 @@
             font-family: sans-serif;
             z-index: 10;
             border-radius: 16px;
+            height: fit-content;
         }
+        #instructions:empty{
+            display: none;
+        }
+
         ol li{
             filter: blur(5px);
         }
@@ -50,10 +53,14 @@
         .mapboxgl-ctrl-top-right{
             bottom: 100px;
             top: unset;
+            left: 50%;
+            width: 90%;
+            transform: translateX(-50%);
         }
         .mapboxgl-ctrl-geocoder .suggestions{
             height: 80px;
             overflow: scroll;
+
         }
         /*.mapboxgl-ctrl-geocoder .suggestions{*/
         /*    top: -300%;*/

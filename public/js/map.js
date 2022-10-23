@@ -24,8 +24,15 @@ function successLocation(position) {
         accessToken: mapboxgl.accessToken, // Set the access token
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         marker: false, // Do not use the default marker style
-        placeholder: 'Search for places in Berkeley', // Placeholder text for the search bar
+        placeholder: 'Search for places in Tirane', // Placeholder text for the search bar
         bbox: [19.006777,40.837158,20.500917,41.753353], // Boundary for Berkeley
+        flyTo: {
+            padding: 7, // If you want some minimum space around your result
+            easing: function(t) {
+                return t;
+            },
+            maxZoom: 12, // If you want your result not to go further than a specific zoom
+        },
         proximity: {
             longitude: -122.25948,
             latitude: 37.87221
@@ -79,6 +86,7 @@ function successLocation(position) {
             });
         }
         getRoute(coords)
+        geocoder.clear();
     });
 
     const insert = (arr, index, newItem) => [
@@ -137,7 +145,7 @@ function successLocation(position) {
         }
         instructions.innerHTML = `<p><strong>Trip duration: ${Math.floor(
             data.duration / 60
-        )} min 🚶‍♂️ </strong></p><ol>${tripInstructions}</ol>`
+        )} min 🚶‍♂️ </strong></p>`
 
         const places = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${middle[1]}%2C${middle[0]}&radius=1500&key=AIzaSyCVtsJIdh0VOkTBXGC976DNFiK73ErxlS8&types=tourist_attraction`, { method: 'GET' })
             .then(response => response.json())
@@ -163,7 +171,7 @@ function successLocation(position) {
         // placeDetails = await placeDetailsQuery.json();
         // handleNewLocation(route, Object.values(place.geometry.location).reverse())
         // route = insert(route, index, Object.values(place.geometry.location).reverse())
-        console.log(placeDetails.result.reviews)
+        console.log(places.results)
         if (map.getLayer('vibe')) {
             const end = {
                 type: 'FeatureCollection',
@@ -192,7 +200,9 @@ function successLocation(position) {
                         features: [
                             {
                                 type: 'Feature',
-                                properties: {},
+                                properties: {
+                                    description: `<strong>${place.name}</strong><p>${ placeDetails.result.reviews != undefined ? placeDetails.result.reviews[0].text : ""}</p>`,
+                                },
                                 geometry: {
                                     type: 'Point',
                                     coordinates: Object.values(place.geometry.location).reverse()
@@ -203,7 +213,7 @@ function successLocation(position) {
                 },
                 paint: {
                     'circle-radius': 10,
-                    'circle-color': '#589172',
+                    'circle-color': '#A020F0',
                     'circle-opacity': 1
                 }
             });
