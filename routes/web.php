@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoutesController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,8 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::group(['middleware' => ['auth']], function () {
+Route::resource('routes', RoutesController::class);
+
+});
