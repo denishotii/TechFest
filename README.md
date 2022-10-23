@@ -9,56 +9,61 @@
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Attention: Do you want to explore the world? Map Vibes is the perfect app for you!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Interest: Map Vibes is a Direction App that brings you the opportunity to explore new destinations in the world, and also take you on a new adventure and experience in your own backyard.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Desire: Explore breathtaking routes and places with Map Vibes to make your vacation more memorable. Book your flight now!
 
-## Learning Laravel
+## Packages
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You need **[Composer](https://getcomposer.org/download/)** & **[Node.js](https://nodejs.org/en/download/)** to download the required packages for Map Vibes to function, on the parent directory you have to run composer install & npm install.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements 
+- We recommend using Laragon 
+- SIA won’t run with PHP versions that are lower than 8.0  
+- SIA uses MySql as database, version of MySql should be higher than 5.7 
+- SIA uses TAILWIND CSS framework, for UI 
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## Commands
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- First of all we have to install all dependencies needed for the project using this composer command: 
+composer install 
 
-## Contributing
+- To generate a new .env file for SIA, you should run this command: 
+mv .env.example .env 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- To clear your application cache: 
+php artisan cache:clear   
 
-## Code of Conduct
+- For a faster load of application we recommend you run this command: 
+composer dump-autoload 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- To set the APP_KEY value in your .env file: 
+php artisan key:generate  
 
-## Security Vulnerabilities
+- To enable Tailwind CSS for SIA run: 
+composer require laravel-frontend-presets tailwindcss 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- You have to run these four commands to install node required dependencies: 
+npm install  
+npm install --save --legacy-peer-deps  
+npm install laravel-mix@latest --save-dev  
+npm run dev 
 
-## License
+- To create e link into storage directory to save files run: 
+php artisan storage:link 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- To install tables into your database run:To install tables into your database run: 
+php artisan migrate 
+
+
+## Collaborators
+
+- [Ardit Xhaferi](https://www.linkedin.com/in/ardit-xhaferi/)
+- [Ben Gorani](https://www.linkedin.com/in/ben-gorani-405b06212/)
+- [Denis Hoti](https://www.linkedin.com/in/denishoti/)
+- [Leon Hajdari](mailto:leonhajdari832@gmail.com)
+- [Olt Gjaka](mailto:oltigjaka1@gmail.com)
