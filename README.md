@@ -37,7 +37,7 @@ composer dump-autoload
 - To set the APP_KEY value in your .env file: 
 php artisan key:generate  
 
-- To enable Tailwind CSS for SIA run: 
+- To enable Tailwind CSS for Map Vibes run: 
 composer require laravel-frontend-presets tailwindcss 
 
 - You have to run these four commands to install node required dependencies: 
